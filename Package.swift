@@ -14,7 +14,10 @@ let package = Package(
     ],
     targets: [
         .target(name: "Soundpipe",
-                dependencies: ["KissFFT"],
+                dependencies: [
+                    .product(name: "Vapor", package: "vapor"),
+                    "KissFFT"
+                ],
                 exclude: ["lib/inih/LICENSE.txt"],
                 cSettings: [
                     .headerSearchPath("lib/inih"),
